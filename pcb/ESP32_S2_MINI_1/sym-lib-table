@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "BH1730")(type "KiCad")(uri "${KIPRJMOD}/BH1730.kicad_sym")(options "")(descr ""))
+  (lib (name "ToyTronics")(type "KiCad")(uri "/Users/jensa/Dropbox/Kunder/ToyTronics/ToyTronics.kicad_sym")(options "")(descr ""))
+)
