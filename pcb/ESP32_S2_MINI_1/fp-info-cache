@@ -1,4 +1,4 @@
-20212305655547448
+20215641231210680
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -85022,6 +85022,13 @@ mounting hole 2.5mm
 1
 1
 USB-C-Power-tester
+SC70-5_1.5x2.9mm_P0.95mm
+SC70-5, 5 Pin (hhttps://no.mouser.com/datasheet/2/240/Littelfuse_TVS_Diode_Array_SP3003_Datasheet.pdf-709348.pdf=
+SC70 SO
+0
+5
+5
+USB-C-Power-tester
 SW_Push_1P1T_NO_CK_KMR2
 CK components KMR2 tactile switch http://www.ckswitches.com/media/1479/kmr2.pdf
 tactile switch kmr2
@@ -85084,6 +85091,13 @@ USB3
 0
 16
 11
+USB-C-Power-tester
+UDFN-6_SSM6H19NU
+SSM6H19NU
+SSM6H19NU
+0
+8
+8
 Valve
 Valve_ECC-83-1
 Valve ECC-83-1 round pins
