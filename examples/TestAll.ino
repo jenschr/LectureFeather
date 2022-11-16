@@ -30,14 +30,14 @@ void setup() {
   Serial.println("ready?");
   delay(1500);
 
-  if (! lis.begin(0x18)) {   // change this to 0x19 for alternative i2c address
-    Serial.println("Couldnt start I2C. Please make sure you have installed the 2.0.4 version og the esp32 library by Espressif Systems?");
+  if (! lis.begin(0x18)) {
+    Serial.println("Couldn't find LIS3DH sensor!");
     while (1) yield();
   }
   Serial.println("LIS3DH found!");
 
-  if (! sht31.begin(0x44)) {   // Set to 0x45 for alternate i2c addr
-    Serial.println("Couldn't find SHT31");
+  if (! sht31.begin(0x44)) {
+    Serial.println("Couldn't find SHT31 sensor!");
     while (1) delay(1);
   }
   Serial.println("Found SHT31 sensor!");
@@ -46,17 +46,16 @@ void setup() {
     Serial.println("Couldn't find LTR sensor!");
     while (1) delay(10);
   }
+  
+  // Setul LTR sensor (see advanced demo for all options!
   Serial.println("Found LTR sensor!");
-  // Set gain of 1 (see advanced demo for all options!
   ltr.setGain(LTR3XX_GAIN_4);
-  // Set integration time of 50ms (see advanced demo for all options!
   ltr.setIntegrationTime(LTR3XX_INTEGTIME_50);
-  // Set measurement rate of 50ms (see advanced demo for all options!
   ltr.setMeasurementRate(LTR3XX_MEASRATE_50);
 
-  strip.begin(); // Initialize pins for output
-  strip.setBrightness(20);
-  strip.show();  // Turn all LEDs off ASAP
+  strip.begin();            // Initialize LED pins for output
+  strip.setBrightness(20);  // Avoid blinding yourself
+  strip.show();             // Turn all LEDs off ASAP
 
   i2cdetect();
 
