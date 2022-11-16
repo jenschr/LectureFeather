@@ -11,7 +11,7 @@
 #define NUMPIXELS 1
 
 //Use these pin definitions for the ItsyBitsy M4
-#define DATAPIN    26
+#define DATAPIN    33
 #define CLOCKPIN   21
 
 Adafruit_DotStar strip(NUMPIXELS, DATAPIN, CLOCKPIN, DOTSTAR_BRG);
