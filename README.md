@@ -33,7 +33,7 @@ The [PCB folder](./pcb) holds all the Kicad files I've used for making my boards
 ### Code
 The [Example folder](./examples) holds a single .ino file that will test all the features of the board. Lots of libraries are required, so be sure to read the Include section of the file.
 
-Please note that to make ESP32-S3 work painless, we need to add the following two lines to platformio.ini:
+Please note that to make ESP32-S3 work painless in PlatformIO [ref](https://github.com/espressif/arduino-esp32/issues/6762#issuecomment-1182821492), we need to add the following two lines to platformio.ini:
 
     monitor_speed = 115200
     build_flags = -DARDUINO_USB_MODE=1
