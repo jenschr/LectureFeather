@@ -1,10 +1,10 @@
 # LectureFeather
-A Feather dev board based on ESP32-S2, made for lecturing Embedded Systems and M2M. Feel free to use these Kicad files to make your own boards for use in your own lectures.
+A Feather dev board based on ESP32-S3, made for lecturing Embedded Systems and M2M. Feel free to use these Kicad files to make your own boards for use in your own lectures.
 
 ![First batch](./img/firstBatch.jpg)
 
 ## Thanks to Adafruit
-This board is based on the Feather ESP32-S2 from Adafruit and while I have remade the project in Kicad, the job was so much easier thanks to all the great work and research by Adafruit. Thus I'm keeping with the [CC-BY-SA3.0 license](./license.txt) so be sure to share if you redistribute/remake.
+This board is based on the Feather ESP32-S3 from Adafruit and while I have remade the project in Kicad, the job was so much easier thanks to all the great work and research by Adafruit. Thus I'm keeping with the [CC-BY-SA3.0 license](./license.txt) so be sure to share if you redistribute/remake.
 
 This board will make it really easy for my students to extend the base functionality using FeatherWings and Stemma sensors from Adafruit. I highly recommend Adafruit products and they do fantastic work for the hardware commmunity.
 
@@ -32,6 +32,10 @@ The [PCB folder](./pcb) holds all the Kicad files I've used for making my boards
 
 ### Code
 The [Example folder](./examples) holds a single .ino file that will test all the features of the board. Lots of libraries are required, so be sure to read the Include section of the file.
+
+Please note that to make ESP32-S3 work painless, we need to add the following two lines to platformio.ini:
+  monitor_speed = 115200
+  build_flags = -DARDUINO_USB_MODE=1
 
 ### BOM
 The [HTML BOM](./bom) lists all the components used in the design and shows their position on the board. Great for curious students that want to know it all.
