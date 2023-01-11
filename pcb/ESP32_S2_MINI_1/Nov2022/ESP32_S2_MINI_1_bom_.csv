@@ -1,0 +1,42 @@
+Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet,MFGR,MPN
+1,"Push button switch, generic, two pins",SW_Push,BOOT1,BOOT,SW_Push_1P1T_NO_CK_KMR2,1,,C&K,KMR241GLFS
+2,Unpolarized capacitor,C,C1 C2 C4 C5 C6 C7,0.1uF,C_0402_1005Metric,6,~,Samsung,CL10B104KO8NFNC
+3,"Unpolarized capacitor, small symbol",C_Small,C3,10uF,C_0603_1608Metric,1,~,,
+4,RGB LED with integrated controller,APA102-2020,D3,APA102-2020,LED-APA102-2020,1,http://www.led-color.com/upload/202210/LC8822-2020-6%20EN.pdf,"Shenzhen LED Color Co.,LTD",LC8822-2020-6
+5,Light emitting diode,LED,D1 D2 D5,LED,LED_0402_1005Metric,3,~,,
+6,Diode,D,D4 D6,MSK4005,D_SOD-523,2,~,Shikues,MSK4005
+7,"Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",Conn_01x02_Female,J4,Conn_01x02_Female,JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical,1,~,,
+8,"Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)",Conn_01x12_Female,J2,Conn_01x12_Female,PinHeader_1x12_P2.54mm_Vertical,1,~,,
+9,"Generic connector, single row, 01x16, script generated (kicad-library-utils/schlib/autogen/connector/)",Conn_01x16_Female,J3,Conn_01x16_Female,PinHeader_1x16_P2.54mm_Vertical,1,~,,
+10,"Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)",Conn_01x04_Female,J5,STEMMA,JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical,1,~,,
+11,USB 2.0-only Type-C Receptacle connector,USB_C_Receptacle_USB2.0,J1,USB_C_Receptacle_USB2.0,TYPE-C-31-M-12,1,https://www.usb.org/sites/default/files/documents/usb_type-c.zip,Korean Hroparts Elec,TYPE-C-31-M-12
+12,"-3A Id, -20V Vds, P-Channel MOSFET, SOT-23",DMG2301L,Q1,DMG3415u,SOT-23,1,https://www.diodes.com/assets/Datasheets/DMG2301L.pdf,Diodes Incorporated,DMG3415U-7
+13,Resistor,R,R12 R13,33R,R_0402_1005Metric,2,~,,
+14,Resistor,R,R1 R8 R11,1k,R_0402_1005Metric,3,~,,
+15,Resistor,R,R9 R10 R14,5.1k,R_0402_1005Metric,3,~,,
+16,Resistor,R,R2 R3 R4 R5 R15 R16 R17,10k,R_0402_1005Metric,7,~,Stackpole,RMCF0603JG10K0
+17,Resistor,R,R6 R7,100k,R_0402_1005Metric,2,~,,
+18,"Push button switch, generic, two pins",SW_Push,RESET1,RESET,SW_Push_1P1T_NO_CK_KMR2,1,,C&K,KMR241GLFS
+19,"600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5",AP2112K-3.3,U1 U7,AP2112K-3.3,SOT-23-5,2,https://www.diodes.com/assets/Datasheets/AP2112.pdf,Diodes Incorporated,AP2112K-3.3TRG1
+20,"ESP32-S2-MINI-1 and ESP32-S2-MINI-1U are two powerful, generic Wi-Fi MCU modules that have a rich set of peripherals. They are an ideal choice for a wide variety of application scenarios relating to Internet of Things (IoT), wearable electronics and smart home.",ESP32-S2-MINI-1,U2,ESP32-S3-MINI-1,ESP32-S2-MINI-1,1,https://www.espressif.com/sites/default/files/documentation/esp32-s2-mini-1_esp32-s2-mini-1u_datasheet_en.pdf,Espressif Systems,ESP32-S3-MINI-1-N8
+21,"3-Axis Accelerometer, 2/4/8/16g range, I2C/SPI interface, LGA-16",LIS3DH,U5,LIS3DH,LGA-16_3x3mm_P0.5mm_LayoutBorder3x5y,1,https://www.st.com/resource/en/datasheet/cd00274221.pdf,ST,LIS3DH
+22,"ambient light sensor, i2c interface, 0.01 to 64k lux, 2.4-3.6V",LTR-329ALS-01,U3,LTR-329ALS-01,LTR-329ALS-01,1,https://no.mouser.com/datasheet/2/239/liteon_LTR-329ALS-01-1175539.pdf,Lite-On,LTR-329ALS-01
+23,"Single cell, Li-Ion/Li-Po charge management controller, 4.20V, Tri-State Status Output, in SOT23-5 package",MCP73831-2-OT,U8,MCP73831-2-OT,SOT-23-5,1,http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf,Microchip Technology,MCP73831T-4ADI/OT
+24,"Hall Effect Switch, SOT-23",SM351LT,U4,MT8691AT,SOT-23,1,https://sensing.honeywell.com/honeywell-sensing-nanopower-series-product-sheet-50095501-a-en.pdf,Honeywell,MT8691AT
+25,"I²C humidity and temperature sensor, ±2%RH, ±0.2°C, DFN-8",SHT31-DIS,U6,SHT31-DIS,Sensirion_DFN-8-1EP_2.5x2.5mm_P0.5mm_EP1.1x1.7mm,1,https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf,Sensiron,SHT31-DIS
+
+
+
+
+
+Component Groups:,25
+Component Count:,46
+Fitted Components:,46
+Number of PCBs:,1
+Total components:,46
+Schematic Version:,
+Schematic Date:,
+PCB Variant:,default
+BoM Date:,"2022 November 23, Wednesday 21:07:22"
+Schematic Source:,ESP32_S2_MINI_1.kicad_sch
+KiCad Version:,Eeschema (6.0.4-0)

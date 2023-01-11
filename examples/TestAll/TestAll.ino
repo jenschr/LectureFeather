@@ -10,10 +10,10 @@
 // There is only one pixel on the board
 #define NUMPIXELS 1
 
-//Use these pin definitions for the ItsyBitsy M4
+// Pins for RGB LED
 #define DATAPIN    26
 #define CLOCKPIN   21
-
+ 
 Adafruit_DotStar strip(NUMPIXELS, DATAPIN, CLOCKPIN, DOTSTAR_BRG);
 
 Adafruit_LTR329 ltr = Adafruit_LTR329();
@@ -23,6 +23,8 @@ Adafruit_LIS3DH lis = Adafruit_LIS3DH();
 long firstPixelHue = 0;
 int counter = 0;
 
+void rainbow(); // predeclare method we'll use later
+
 void setup() {
   Serial.begin(9600);
   Wire.begin(3, 4);
@@ -30,14 +32,14 @@ void setup() {
   Serial.println("ready?");
   delay(1500);
 
-  if (! lis.begin(0x18)) {   // change this to 0x19 for alternative i2c address
-    Serial.println("Couldnt start I2C. Please make sure you have installed the 2.0.4 version og the esp32 library by Espressif Systems?");
+  if (! lis.begin(0x18)) {
+    Serial.println("Couldn't find LIS3DH sensor!");
     while (1) yield();
   }
-  Serial.println("LIS3DH found!");
+  Serial.println("Found LIS3DH sensor!");
 
-  if (! sht31.begin(0x44)) {   // Set to 0x45 for alternate i2c addr
-    Serial.println("Couldn't find SHT31");
+  if (! sht31.begin(0x44)) {
+    Serial.println("Couldn't find SHT31 sensor!");
     while (1) delay(1);
   }
   Serial.println("Found SHT31 sensor!");
@@ -46,17 +48,16 @@ void setup() {
     Serial.println("Couldn't find LTR sensor!");
     while (1) delay(10);
   }
+  
+  // Setul LTR sensor (see advanced demo for all options!
   Serial.println("Found LTR sensor!");
-  // Set gain of 1 (see advanced demo for all options!
   ltr.setGain(LTR3XX_GAIN_4);
-  // Set integration time of 50ms (see advanced demo for all options!
   ltr.setIntegrationTime(LTR3XX_INTEGTIME_50);
-  // Set measurement rate of 50ms (see advanced demo for all options!
   ltr.setMeasurementRate(LTR3XX_MEASRATE_50);
 
-  strip.begin(); // Initialize pins for output
-  strip.setBrightness(20);
-  strip.show();  // Turn all LEDs off ASAP
+  strip.begin();            // Initialize LED pins for output
+  strip.setBrightness(20);  // Avoid blinding yourself
+  strip.show();             // Turn all LEDs off ASAP
 
   i2cdetect();
 
@@ -67,10 +68,11 @@ void loop() {
   // RGB led
   rainbow();
 
+  // Only update sensors every now and then
   if( counter%50==0 ) 
   {
     //Blink builtin LED
-    digitalWrite( 13, !digitalRead(13) );
+    digitalWrite( LED_BUILTIN, !digitalRead(13) );
     
     // Temp & humid
     float t = sht31.readTemperature();
@@ -89,9 +91,16 @@ void loop() {
     }
   
     // Light
-    uint16_t light = ltr.readVisible();
-    Serial.print("\tLight: ");
-    Serial.print(light);
+    uint16_t visible_plus_ir, infrared;
+    if (ltr.newDataAvailable()) {
+      bool valid = ltr.readBothChannels(visible_plus_ir, infrared);
+      if (valid) {
+        Serial.print("\tCH0 Visible + IR: ");
+        Serial.print(visible_plus_ir);
+        Serial.print("\tCH1 Infrared: ");
+        Serial.print(infrared);
+      }
+    }
 
     // Accel
     lis.read();      // get X Y and Z data at once
@@ -104,7 +113,7 @@ void loop() {
   else
   {
     // Just wait a little so the LED have time to update
-    delay(5);
+    delay(3);
   }
   
   counter++;
