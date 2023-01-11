@@ -10,8 +10,7 @@
 // There is only one pixel on the board
 #define NUMPIXELS 1
 
-// Pins for RGB LED
-#define DATAPIN    26
+#define DATAPIN    33
 #define CLOCKPIN   21
  
 Adafruit_DotStar strip(NUMPIXELS, DATAPIN, CLOCKPIN, DOTSTAR_BRG);
