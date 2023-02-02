@@ -37,6 +37,8 @@ Please note that to make ESP32-S3 work painless in PlatformIO [ref](https://gith
 
     monitor_speed = 115200
     build_flags = -DARDUINO_USB_MODE=1
+    
+I wrote up a [long article on how to solve the most common issues with the ESP32-S3 on my blog](https://flashgamer.com/blog/comments/solving-platformio-issues-with-the-adafruit-feather-s3).
 
 ### BOM
 The [HTML BOM](./bom) lists all the components used in the design and shows their position on the board. Great for curious students that want to know it all.
