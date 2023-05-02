@@ -1,5 +1,5 @@
 # LectureFeather
-A Feather dev board based on ESP32-S3, made for lecturing Embedded Systems and M2M. Feel free to use these Kicad files to make your own boards for use in your own lectures.
+A Feather dev board based on ESP32-S3, made for lecturing Embedded Systems (PG5501), M2M (TEK303) and Edge To App (PGR212) at Kristiania University. Feel free to use these Kicad files to make your own boards for use in your own lectures.
 
 ![First batch](./img/firstBatch.jpg)
 
