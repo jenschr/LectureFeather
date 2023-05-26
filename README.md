@@ -27,6 +27,11 @@ Here are some differences from the Adafruit design:
 
 ## Project files
 
+## Known issues
+- Version 1.0 had the Temperature sensor placed too close to the ESP32 module. This caused Temperature readins to be off by quite a bit. For Version 1.1 the sensor was moved further away, but it's still reading too high. Next version should move it all the way back to the USB connector as well as add cutouts to reduce coupling to the copper planes on the PCB.
+- The board is pin compatible with both S2 and S3 MINI modules. The choice of using S3 modules in 2023 is the one I've regretted the most since tooling just isn't there for the alternate USB mode. This requires lots of custom setup to work well. I made a [writeup on solving the ESP32-S3 issues for PlatformIO](https://flashgamer.com/blog/comments/solving-platformio-issues-with-the-adafruit-feather-s3), but there are issues for Arduino as well. I've tried solving some of these with the tooling, but I'm having a hard time explaining to the maintainers what is S3 issues vs my custom board. They seem to (rightfully) think that anyone commenting on a board programming issue don't know what they're talking about, so this may take time. Use the S2 for less tooling problems is my current suggestion.
+- I'm thinking on adding one more sensor in the next version of the board. I'm open to suggestions on what to add, so find my email on my blog and message me.
+
 ### PCB
 The [PCB folder](./pcb) holds all the Kicad files I've used for making my boards. Please do not include any logos if you remake this board. Here you'll also find the Errata for versions of this board.
 
