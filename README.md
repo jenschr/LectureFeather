@@ -41,7 +41,8 @@ The [Example folder](./examples) holds a single .ino file that will test all the
 Please note that to make ESP32-S3 work painless in PlatformIO [ref](https://github.com/espressif/arduino-esp32/issues/6762#issuecomment-1182821492), we need to add the following two lines to platformio.ini:
 
     monitor_speed = 115200
-    build_flags = -DARDUINO_USB_MODE=1
+    build_flags =   -DARDUINO_USB_MODE=1
+                    -DARDUINO_USB_CDC_ON_BOOT=1
     
 Note that if you use PlatformIO, I wrote up a [long article on how to solve the most common issues with the ESP32-S3 for PlatformIO on my blog](https://flashgamer.com/blog/comments/solving-platformio-issues-with-the-adafruit-feather-s3).
 
