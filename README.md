@@ -9,14 +9,14 @@ This board is based on the Feather ESP32-S3 from Adafruit and while I have remad
 This board will make it really easy for my students to extend the base functionality using FeatherWings and Stemma sensors from Adafruit. I highly recommend Adafruit products and they do fantastic work for the hardware commmunity.
 
 ## Usage
-To use the board, set the Arduino IDE, PlatformIO or another IDE to use the board named "Adafruit ESP32-S2 Feather". This will ensure proper operation so that defines such as LED_BUILTIN and auto-programming will work. Refer to the original [Adafruit Guide](https://learn.adafruit.com/adafruit-esp32-s2-feather) for details.
+To use the board, set the Arduino IDE, PlatformIO or another IDE to use the board named "Adafruit ESP32-S3 Feather". This will ensure proper operation so that defines such as LED_BUILTIN and auto-programming will work. Refer to the original [Adafruit Guide](https://learn.adafruit.com/adafruit-esp32-s2-feather) for details.
 
 As in the Adafruit design, special features are on these pins:
 * I2C is on IO03 and IO04. Initiate I2C using wire.begin(3,4);
 * Separate power supply for I2C devices are on IO07. Set this low before going into low power mode.
 * LED_BUILTIN is on IO13
 
-Here are some differences from the Adafruit design:
+Here are some differences from the Adafruit development board:
 
 * Light/lux sensor (LTR-329) on I2C address 0x29
 * Temperature/moisture sensor (SHT31) on I2C address 0x44
